@@ -1,0 +1,676 @@
+extends _includes/layout
+
+block config
+  - var pagetitle = 'Панель Управление | Длинный список'
+  - var bodyClass = ''
+block content
+  .page__border
+    include _includes/blocks/preloader
+    .page.page-control-bg
+        .hints.hints--control(fade-in-preloader)
+            .hints__container
+                .hints__messages
+                    .hints__message.hints__message--control.hints__message--unlock-planet.hints__message--1.is-active
+                        .hints__message-cloud(style="background-image: url(./assets/img/message/message-20.svg)") 
+                            p Используй артефакт, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>чтобы собрать первую &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>часть ракеты.
+                        .message__next(data-message="hints__message--2")
+                            span.btn.--link Дааа, сейчас!
+                    .hints__message.hints__message--control.hints__message--unlock-planet.hints__message--2
+                        .hints__message-cloud(style="background-image: url(./assets/img/message/message-21.svg)") 
+                            p Смотри, ты появился в &nbsp;&nbsp;&nbsp;&nbsp; <br> рейтинге игроков! <br> Не зря старался.
+                        .hints__message-cloud.hints__message-cloud--second(style="background-image: url(./assets/img/message/message-22.svg)") 
+                            p Не останавливайся на <br> достигнутом! Продолжай <br> выполнять задания, чтобы <br> выиграть ценные призы и <br> стать победителем.
+            .hints__circles 
+                main 
+                    <svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M94 47C94 21.0426 72.9574 0 47 0C21.0426 0 0 21.0426 0 47C0 72.9574 21.0426 94 47 94C72.9574 94 94 72.9574 94 47Z" fill="url(#paint0_radial_219_379)" fill-opacity="0.96"/>
+                        <defs>
+                            <radialGradient id="paint0_radial_219_379" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(36.7187) rotate(79.4722) scale(56.27 57.4948)">
+                                <stop stop-color="#FFCC55" stop-opacity="0"/>
+                                <stop offset="1" stop-color="#FFCC55"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+
+                a(href="#").hints__circles-faq
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_b_219_383)">
+                            <rect width="26" height="26" rx="13" fill="url(#paint0_radial_219_383)" fill-opacity="0.96"/>
+                        </g>
+                        <path d="M4.13828 9H8.64828V10.3H5.61828V11.93H8.40828V13.23H5.61828V16H4.13828V9ZM13.4061 14.51H11.0461L10.4761 16H8.99609L11.7361 8.95H12.8261L15.5761 16H14.0061L13.4061 14.51ZM11.4561 13.34H13.0561L12.5161 11.88L12.2761 10.77H12.2261L11.9861 11.89L11.4561 13.34ZM22.8661 18.12C22.6861 18.1667 22.5094 18.1967 22.3361 18.21C22.1628 18.23 21.9894 18.24 21.8161 18.24C21.4494 18.24 21.0894 18.2067 20.7361 18.14C20.3894 18.0733 20.0528 17.9967 19.7261 17.91C19.4061 17.83 19.0928 17.7567 18.7861 17.69C18.4861 17.6233 18.2028 17.59 17.9361 17.59C17.7561 17.59 17.5861 17.61 17.4261 17.65V16.35C17.6328 16.31 17.8394 16.29 18.0461 16.29C18.3461 16.29 18.6461 16.3233 18.9461 16.39C19.2528 16.4567 19.5628 16.5267 19.8761 16.6C20.1894 16.68 20.5094 16.7533 20.8361 16.82C21.1694 16.8867 21.5161 16.92 21.8761 16.92C22.2094 16.92 22.5394 16.8867 22.8661 16.82V18.12ZM15.6461 12.5C15.6461 11.9267 15.7194 11.4133 15.8661 10.96C16.0128 10.5067 16.2228 10.1267 16.4961 9.82C16.7761 9.50667 17.1161 9.27 17.5161 9.11C17.9161 8.94333 18.3694 8.86 18.8761 8.86C19.4161 8.86 19.8861 8.95 20.2861 9.13C20.6928 9.30333 21.0294 9.55 21.2961 9.87C21.5694 10.19 21.7728 10.5733 21.9061 11.02C22.0461 11.4667 22.1161 11.96 22.1161 12.5C22.1161 13.0733 22.0394 13.5867 21.8861 14.04C21.7394 14.4933 21.5261 14.8767 21.2461 15.19C20.9661 15.4967 20.6261 15.7333 20.2261 15.9C19.8261 16.06 19.3761 16.14 18.8761 16.14C18.3361 16.14 17.8628 16.0533 17.4561 15.88C17.0561 15.7 16.7194 15.45 16.4461 15.13C16.1794 14.81 15.9794 14.4267 15.8461 13.98C15.7128 13.5333 15.6461 13.04 15.6461 12.5ZM17.2161 12.5C17.2161 12.8467 17.2494 13.1633 17.3161 13.45C17.3828 13.7367 17.4828 13.9833 17.6161 14.19C17.7494 14.3967 17.9194 14.5567 18.1261 14.67C18.3394 14.7833 18.5894 14.84 18.8761 14.84C19.4028 14.84 19.8128 14.66 20.1061 14.3C20.3994 13.94 20.5461 13.34 20.5461 12.5C20.5461 12.1667 20.5161 11.8567 20.4561 11.57C20.3961 11.2833 20.2961 11.0367 20.1561 10.83C20.0228 10.6167 19.8494 10.4533 19.6361 10.34C19.4294 10.22 19.1761 10.16 18.8761 10.16C18.3561 10.16 17.9494 10.3467 17.6561 10.72C17.3628 11.0933 17.2161 11.6867 17.2161 12.5Z" fill="white"/>
+                        <defs>
+                            <filter id="filter0_b_219_383" x="-16" y="-16" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="8"/>
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_219_383"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_219_383" result="shape"/>
+                            </filter>
+                            <radialGradient id="paint0_radial_219_383" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(10.1562) rotate(79.4722) scale(15.5641 15.9028)">
+                                <stop stop-color="#FFCC55" stop-opacity="0"/>
+                                <stop offset="1" stop-color="#FFCC55"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                a(href="#").hints__circles-info 
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_b_219_391)">
+                            <rect width="26" height="26" rx="13" fill="url(#paint0_radial_219_391)" fill-opacity="0.96"/>
+                        </g>
+                        <path d="M12.2615 11.8H11.4615V11H14.5415V11.8H13.7415V17.2H14.5415V18H11.4615V17.2H12.2615V11.8Z" fill="white"/>
+                        <circle cx="13" cy="9" r="1" fill="white"/>
+                        <defs>
+                            <filter id="filter0_b_219_391" x="-16" y="-16" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feGaussianBlur in="BackgroundImage" stdDeviation="8"/>
+                                <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_219_391"/>
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_219_391" result="shape"/>
+                            </filter>
+                            <radialGradient id="paint0_radial_219_391" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(10.1562) rotate(79.4722) scale(15.5641 15.9028)">
+                                <stop stop-color="#FFCC55" stop-opacity="0"/>
+                                <stop offset="1" stop-color="#FFCC55"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+    .page__container#pageContainerControl(fade-in-preloader)
+        section.control.page-profile-bg
+            header.header(fade-in-preloader).header--profile
+                .container.--flex.--jcsb
+                    a.header__logo(href="index.html") 
+                        img(src="./assets/img/header/logo.svg", alt="")
+                    .header__title
+                        a(href="#")
+                            <div class="header__back-icon">
+                                <span> 
+                                    <svg width="14" height="10" viewBox="0 0 14 10" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.53033 8.46967C5.82322 8.76256 5.82322 9.23744 5.53033 9.53033C5.23744 9.82322 4.76256 9.82322 4.46967 9.53033L5.53033 8.46967ZM1 5L0.469671 5.53033C0.176777 5.23744 0.176777 4.76256 0.469671 4.46967L1 5ZM4.46967 0.469671C4.76256 0.176778 5.23744 0.176778 5.53033 0.469671C5.82322 0.762564 5.82322 1.23744 5.53033 1.53033L4.46967 0.469671ZM13 4.25C13.4142 4.25 13.75 4.58579 13.75 5C13.75 5.41421 13.4142 5.75 13 5.75L13 4.25ZM4.46967 9.53033L0.469671 5.53033L1.53033 4.46967L5.53033 8.46967L4.46967 9.53033ZM0.469671 4.46967L4.46967 0.469671L5.53033 1.53033L1.53033 5.53033L0.469671 4.46967ZM1 4.25C2 4.25 5 4.25 7.75 4.25C9.125 4.25 10.4375 4.25 11.4062 4.25C11.8906 4.25 12.2891 4.25 12.5664 4.25C12.7051 4.25 12.8135 4.25 12.8872 4.25C12.9241 4.25 12.9523 4.25 12.9713 4.25C12.9807 4.25 12.9879 4.25 12.9927 4.25C12.9951 4.25 12.997 4.25 12.9982 4.25C12.9988 4.25 12.9992 4.25 12.9995 4.25C12.9997 4.25 12.9998 4.25 12.9999 4.25C13 4.25 13 4.25 13 5C13 5.75 13 5.75 12.9999 5.75C12.9998 5.75 12.9997 5.75 12.9995 5.75C12.9993 5.75 12.9988 5.75 12.9982 5.75C12.997 5.75 12.9951 5.75 12.9927 5.75C12.9879 5.75 12.9808 5.75 12.9713 5.75C12.9523 5.75 12.9241 5.75 12.8872 5.75C12.8135 5.75 12.7051 5.75 12.5664 5.75C12.2891 5.75 11.8906 5.75 11.4062 5.75C10.4375 5.75 9.125 5.75 7.75 5.75C5 5.75 2 5.75 1 5.75L1 4.25Z"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="header__back-circle">
+                                <svg width="3" height="2" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg">
+                                    <circle r="0.75" transform="matrix(1 -8.74228e-08 -8.74228e-08 -1 1.4502 0.951172)"></circle>
+                                </svg>
+                            </div>
+                            span Вернуться к карте планет 
+                    .header__right 
+                        a(href="#") 
+                            picture
+                            main 
+                                h3 Игорь Тимофеев
+                                span 
+                                    em #7 в рейтинге
+                                    b 2 536 баллов
+            .control__container
+                h1.g-title Центр управления
+                .control__progress(data-level="1")
+                    <svg class="control__progress-bg" viewBox="0 0 1344 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_i_129_1376)">
+                            <path d="M1343.46 250.452C1344.84 262.457 1335.83 270.65 1323.79 271.701C1180.27 284.234 288.486 286.97 25.9987 270.617C11.1321 269.691 -1.19904 260.644 0.845087 245.889C9.66888 182.199 85.3812 25.373 123.453 16.0537C196.367 -1.79433 1178.98 -11.1434 1227.07 22.853C1277.24 58.3166 1337.18 195.899 1343.46 250.452Z" fill="white"/>
+                        </g>
+                        <defs>
+                        <filter id="filter0_i_129_1376" x="0.623047" y="-4" width="1342.98" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                            <feOffset dy="-4"/>
+                            <feGaussianBlur stdDeviation="4"/>
+                            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.909804 0 0 0 0 0.313726 0 0 0 0 0.470588 0 0 0 0.48 0"/>
+                            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_129_1376"/>
+                        </filter>
+                        </defs>
+                    </svg>
+                    h2 Прогресс игры
+                    ul
+                        li.active
+                            picture 
+                                img(src="./assets/img/control/planet-1.png", srcset="./assets/img/control/planet-1@2x.png 2x", alt="planets")
+                            h3 Корпорулия
+                        li
+                            picture 
+                                img(src="./assets/img/control/planet-2.png", srcset="./assets/img/control/planet-2@2x.png 2x", alt="planets")
+                            h3 Футурия
+                        li
+                            picture 
+                                img(src="./assets/img/control/planet-3.png", srcset="./assets/img/control/planet-3@2x.png 2x", alt="planets")
+                            h3 Физиляндия
+                        li
+                            picture 
+                                img(src="./assets/img/control/planet-4.png", srcset="./assets/img/control/planet-4@2x.png 2x", alt="planets")
+                            h3 Юриляндия
+                        li
+                            picture 
+                                img(src="./assets/img/control/planet-5.png", srcset="./assets/img/control/planet-5@2x.png 2x", alt="planets")
+                            h3 Военная
+                        li
+                            picture 
+                                img(src="./assets/img/control/planet-6.png", srcset="./assets/img/control/planet-6@2x.png 2x", alt="planets")
+                            h3 Порталия
+                    .control__progress-bar 
+                        <svg width="1184" height="16" viewBox="0 0 1184 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1176 1H8C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15H1176C1179.87 15 1183 11.866 1183 8C1183 4.13401 1179.87 1 1176 1Z" stroke="#FFC700" stroke-width="2" fill="transparent"/>
+                            <path d="M198 0V16" stroke="#FFC700" stroke-width="2"/>
+                            <path d="M395 0V16" stroke="#FFC700" stroke-width="2"/>
+                            <path d="M592 0V16" stroke="#FFC700" stroke-width="2"/>
+                            <path d="M789 0V16" stroke="#FFC700" stroke-width="2"/>
+                            <path d="M986 0V16" stroke="#FFC700" stroke-width="2"/>
+                        </svg>
+                        span.control__progress-bar-active
+                .control__launching#controlLaunching
+                    img.control__launching-bg(src="./assets/img/control/launching-bg.png", alt="launching")
+                    .control__launching-content 
+                        h2 Подготовка к запуску
+                        main 
+                            picture 
+                                img(src="./assets/img/control/launching-rocket.png", alt="rocket")
+                                img.rocket-part.rocket-part--1.active(src="./assets/img/control/rocket-part-1.png", alt="rocket")
+                                img.rocket-part.rocket-part--2(src="./assets/img/control/rocket-part-2.png", alt="rocket")
+                                img.rocket-part.rocket-part--3(src="./assets/img/control/rocket-part-3.png", alt="rocket")
+                                img.rocket-part.rocket-part--4(src="./assets/img/control/rocket-part-4.png", alt="rocket")
+                                img.rocket-part.rocket-part--5(src="./assets/img/control/rocket-part-5.png", alt="rocket")
+                                img.rocket-part.rocket-part--6(src="./assets/img/control/rocket-part-6.png", alt="rocket")
+                            button
+                                span 
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.5 6.63397C14.1667 7.01887 14.1667 7.98113 13.5 8.36603L2.25 14.8612C1.58333 15.2461 0.749999 14.765 0.749999 13.9952L0.75 1.00481C0.75 0.23501 1.58333 -0.246117 2.25 0.138783L13.5 6.63397Z" fill="white"/>
+                                    </svg>
+                                h4 Запустить <br> ракету
+                        ul.control__launching-content-table
+                            li.control__launching-content-table-item.control__launching-content-table-item--1
+                                <svg class="control__launching-content-table-item-bg" width="161" height="118" viewBox="0 0 161 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_138_1695" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="161" height="118">
+                                        <path d="M1.1723 5.52315C1.33002 3.6874 2.40252 2.35552 4.22723 2.10005C22.3028 -0.430629 122.228 -0.994415 155.136 2.2028C158.075 2.48831 160.235 4.51552 160.434 7.46138C161.886 28.9796 160.604 112.545 155.883 114.61C147.267 118.379 10.5037 120.353 4.82108 113.174C-1.50283 105.185 -0.293465 22.5835 1.1723 5.52315Z" fill="url(#paint0_linear_138_1695)" fill-opacity="0.96"/>
+                                    </mask>
+                                    <g mask="url(#mask0_138_1695)">
+                                        <path d="M4.36589 3.09039C13.32 1.83677 42.7405 1.06114 74.1215 1.00346C105.48 0.945826 138.641 1.60493 155.04 3.19811C157.538 3.44085 159.273 5.11625 159.436 7.52873C160.159 18.2361 160.203 44.4659 159.474 68.2999C159.11 80.2121 158.553 91.5011 157.794 99.9331C157.414 104.153 156.986 107.632 156.511 110.107C156.273 111.349 156.03 112.302 155.789 112.958C155.668 113.287 155.56 113.507 155.474 113.642C155.45 113.679 155.431 113.704 155.418 113.72C154.989 113.89 154.095 114.094 152.682 114.305C151.233 114.52 149.342 114.729 147.064 114.929C142.51 115.327 136.455 115.685 129.401 115.986C115.295 116.588 97.2283 116.964 79.2501 116.998C61.2699 117.031 43.3939 116.723 29.6658 115.959C22.7984 115.577 16.9908 115.081 12.7341 114.462C10.6029 114.152 8.889 113.815 7.63612 113.454C7.00917 113.273 6.52249 113.094 6.16671 112.921C5.79369 112.74 5.64555 112.605 5.60516 112.554C5.32205 112.196 5.00026 111.542 4.67354 110.529C4.35319 109.536 4.05188 108.276 3.77162 106.772C3.21129 103.763 2.74886 99.8527 2.37356 95.3004C1.62331 86.2001 1.22782 74.6192 1.07548 62.7377C0.770678 38.9659 1.44001 14.0893 2.16863 5.60875C2.23286 4.86115 2.47692 4.28106 2.82982 3.87451C3.17586 3.47586 3.67467 3.18716 4.36589 3.09039Z" fill="url(#paint1_radial_138_1695)" fill-opacity="0.96" stroke="#9062C3" stroke-width="2"/>
+                                    </g>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_138_1695" x1="80.4447" y1="118" x2="80.4447" y2="-2.23288e-09" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_138_1695" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.4447 161.949) rotate(-90) scale(161.949 402.259)">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                img(src="./assets/img/control/launching-artefacts-1.svg", alt="")
+                                img.control__launching-content-table-item-img-active(src="./assets/img/control/launching-artefacts-1-active.png", srcset="./assets/img/control/launching-artefacts-1-active@2x.png" alt="")
+                                span Нейросеть <br> Ева
+                                button.btn.--texture Применить
+                            li.control__launching-content-table-item.control__launching-content-table-item--2
+                                <svg class="control__launching-content-table-item-bg" width="161" height="118" viewBox="0 0 161 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_138_1695" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="161" height="118">
+                                        <path d="M1.1723 5.52315C1.33002 3.6874 2.40252 2.35552 4.22723 2.10005C22.3028 -0.430629 122.228 -0.994415 155.136 2.2028C158.075 2.48831 160.235 4.51552 160.434 7.46138C161.886 28.9796 160.604 112.545 155.883 114.61C147.267 118.379 10.5037 120.353 4.82108 113.174C-1.50283 105.185 -0.293465 22.5835 1.1723 5.52315Z" fill="url(#paint0_linear_138_1695)" fill-opacity="0.96"/>
+                                    </mask>
+                                    <g mask="url(#mask0_138_1695)">
+                                        <path d="M4.36589 3.09039C13.32 1.83677 42.7405 1.06114 74.1215 1.00346C105.48 0.945826 138.641 1.60493 155.04 3.19811C157.538 3.44085 159.273 5.11625 159.436 7.52873C160.159 18.2361 160.203 44.4659 159.474 68.2999C159.11 80.2121 158.553 91.5011 157.794 99.9331C157.414 104.153 156.986 107.632 156.511 110.107C156.273 111.349 156.03 112.302 155.789 112.958C155.668 113.287 155.56 113.507 155.474 113.642C155.45 113.679 155.431 113.704 155.418 113.72C154.989 113.89 154.095 114.094 152.682 114.305C151.233 114.52 149.342 114.729 147.064 114.929C142.51 115.327 136.455 115.685 129.401 115.986C115.295 116.588 97.2283 116.964 79.2501 116.998C61.2699 117.031 43.3939 116.723 29.6658 115.959C22.7984 115.577 16.9908 115.081 12.7341 114.462C10.6029 114.152 8.889 113.815 7.63612 113.454C7.00917 113.273 6.52249 113.094 6.16671 112.921C5.79369 112.74 5.64555 112.605 5.60516 112.554C5.32205 112.196 5.00026 111.542 4.67354 110.529C4.35319 109.536 4.05188 108.276 3.77162 106.772C3.21129 103.763 2.74886 99.8527 2.37356 95.3004C1.62331 86.2001 1.22782 74.6192 1.07548 62.7377C0.770678 38.9659 1.44001 14.0893 2.16863 5.60875C2.23286 4.86115 2.47692 4.28106 2.82982 3.87451C3.17586 3.47586 3.67467 3.18716 4.36589 3.09039Z" fill="url(#paint1_radial_138_1695)" fill-opacity="0.96" stroke="#9062C3" stroke-width="2"/>
+                                    </g>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_138_1695" x1="80.4447" y1="118" x2="80.4447" y2="-2.23288e-09" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_138_1695" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.4447 161.949) rotate(-90) scale(161.949 402.259)">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>
+                                img(src="./assets/img/control/launching-artefacts-2.svg", alt="")
+                                img.control__launching-content-table-item-img-active(src="./assets/img/control/launching-artefacts-2-active.png", srcset="./assets/img/control/launching-artefacts-2-active@2x.png" alt="")
+                                span Кристалл <br> знаний
+                                button.btn.--texture Применить
+                            li.control__launching-content-table-item.control__launching-content-table-item--3
+                                <svg class="control__launching-content-table-item-bg" width="245" height="134" viewBox="0 0 245 134" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_126_854" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="245" height="134">
+                                    <path d="M243.196 6.10398C242.964 4.13491 241.691 2.76011 239.724 2.51604C215.208 -0.524911 53.844 -1.20997 6.16867 2.71406C3.42265 2.94008 1.24988 4.68703 0.963015 7.42737C-1.40605 30.058 0.495296 127.77 7.78739 130.15C20.898 134.43 229.016 136.672 237.664 128.52C247.315 119.421 245.436 25.0963 243.196 6.10398Z" fill="url(#paint0_linear_126_854)" fill-opacity="0.96"/>
+                                    </mask>
+                                    <g mask="url(#mask0_126_854)">
+                                    <path d="M239.6 3.50844C227.419 1.9974 181.025 1.0641 131.63 1.00318C82.2583 0.942292 30.04 1.75265 6.2507 3.71069C3.88554 3.90536 2.18478 5.36115 1.95758 7.53148C0.781281 18.7682 0.660828 48.7901 1.75148 76.3431C2.29645 90.1103 3.14246 103.225 4.30464 113.035C4.88634 117.946 5.54355 121.996 6.27278 124.876C6.6385 126.321 7.01187 127.429 7.38248 128.191C7.56758 128.572 7.73688 128.836 7.881 129.005C8.02837 129.178 8.10597 129.202 8.09772 129.2C8.80511 129.431 10.287 129.682 12.545 129.933C14.7703 130.18 17.6655 130.419 21.1396 130.646C28.0861 131.1 37.3125 131.506 48.0524 131.848C69.5303 132.532 97.0341 132.959 124.401 132.997C151.769 133.035 178.988 132.685 199.899 131.817C210.358 131.382 219.222 130.819 225.733 130.112C228.991 129.758 231.637 129.371 233.591 128.951C234.568 128.741 235.351 128.527 235.94 128.314C236.555 128.091 236.861 127.902 236.978 127.792C237.437 127.359 237.93 126.6 238.423 125.458C238.91 124.33 239.368 122.898 239.794 121.185C240.646 117.76 241.35 113.305 241.921 108.115C243.062 97.7409 243.661 84.539 243.889 71.0052C244.346 43.9248 243.315 15.6492 242.203 6.22107C242.021 4.67642 241.079 3.69185 239.6 3.50844Z" fill="url(#paint1_radial_126_854)" fill-opacity="0.96" stroke="#9062C3" stroke-width="2"/>
+                                    </g>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_126_854" x1="122.584" y1="127.596" x2="122.584" y2="-2.53598e-09" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#9062C3" stop-opacity="0"/>
+                                    <stop offset="1" stop-color="#9062C3"/>
+                                    </linearGradient>
+                                    <radialGradient id="paint1_radial_126_854" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(122.584 183.908) rotate(-90) scale(183.908 612.134)">
+                                    <stop stop-color="#9062C3" stop-opacity="0"/>
+                                    <stop offset="1" stop-color="#9062C3"/>
+                                    </radialGradient>
+                                    </defs>
+                                </svg>
+                                img(src="./assets/img/control/launching-artefacts-3.svg", alt="")
+                                img.control__launching-content-table-item-img-active(src="./assets/img/control/launching-artefacts-3-active.png", srcset="./assets/img/control/launching-artefacts-3-active@2x.png" alt="")
+                                span Гиперпростран-<br>ственный ускоритель
+                                button.btn.--texture Применить
+                            li.control__launching-content-table-item.control__launching-content-table-item--4
+                                <svg class="control__launching-content-table-item-bg" width="161" height="118" viewBox="0 0 161 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_138_1695" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="161" height="118">
+                                        <path d="M1.1723 5.52315C1.33002 3.6874 2.40252 2.35552 4.22723 2.10005C22.3028 -0.430629 122.228 -0.994415 155.136 2.2028C158.075 2.48831 160.235 4.51552 160.434 7.46138C161.886 28.9796 160.604 112.545 155.883 114.61C147.267 118.379 10.5037 120.353 4.82108 113.174C-1.50283 105.185 -0.293465 22.5835 1.1723 5.52315Z" fill="url(#paint0_linear_138_1695)" fill-opacity="0.96"/>
+                                    </mask>
+                                    <g mask="url(#mask0_138_1695)">
+                                        <path d="M4.36589 3.09039C13.32 1.83677 42.7405 1.06114 74.1215 1.00346C105.48 0.945826 138.641 1.60493 155.04 3.19811C157.538 3.44085 159.273 5.11625 159.436 7.52873C160.159 18.2361 160.203 44.4659 159.474 68.2999C159.11 80.2121 158.553 91.5011 157.794 99.9331C157.414 104.153 156.986 107.632 156.511 110.107C156.273 111.349 156.03 112.302 155.789 112.958C155.668 113.287 155.56 113.507 155.474 113.642C155.45 113.679 155.431 113.704 155.418 113.72C154.989 113.89 154.095 114.094 152.682 114.305C151.233 114.52 149.342 114.729 147.064 114.929C142.51 115.327 136.455 115.685 129.401 115.986C115.295 116.588 97.2283 116.964 79.2501 116.998C61.2699 117.031 43.3939 116.723 29.6658 115.959C22.7984 115.577 16.9908 115.081 12.7341 114.462C10.6029 114.152 8.889 113.815 7.63612 113.454C7.00917 113.273 6.52249 113.094 6.16671 112.921C5.79369 112.74 5.64555 112.605 5.60516 112.554C5.32205 112.196 5.00026 111.542 4.67354 110.529C4.35319 109.536 4.05188 108.276 3.77162 106.772C3.21129 103.763 2.74886 99.8527 2.37356 95.3004C1.62331 86.2001 1.22782 74.6192 1.07548 62.7377C0.770678 38.9659 1.44001 14.0893 2.16863 5.60875C2.23286 4.86115 2.47692 4.28106 2.82982 3.87451C3.17586 3.47586 3.67467 3.18716 4.36589 3.09039Z" fill="url(#paint1_radial_138_1695)" fill-opacity="0.96" stroke="#9062C3" stroke-width="2"/>
+                                    </g>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_138_1695" x1="80.4447" y1="118" x2="80.4447" y2="-2.23288e-09" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_138_1695" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.4447 161.949) rotate(-90) scale(161.949 402.259)">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>                      
+                                img(src="./assets/img/control/launching-artefacts-1.svg", alt="")
+                                img.control__launching-content-table-item-img-active(src="./assets/img/control/launching-artefacts-1-active.png", srcset="./assets/img/control/launching-artefacts-1-active@2x.png" alt="")
+                                span Нейросеть<br>Ева
+                                button.btn.--texture Применить
+                            li.control__launching-content-table-item.control__launching-content-table-item--2
+                                <svg class="control__launching-content-table-item-bg" width="161" height="118" viewBox="0 0 161 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_138_1695" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="161" height="118">
+                                        <path d="M1.1723 5.52315C1.33002 3.6874 2.40252 2.35552 4.22723 2.10005C22.3028 -0.430629 122.228 -0.994415 155.136 2.2028C158.075 2.48831 160.235 4.51552 160.434 7.46138C161.886 28.9796 160.604 112.545 155.883 114.61C147.267 118.379 10.5037 120.353 4.82108 113.174C-1.50283 105.185 -0.293465 22.5835 1.1723 5.52315Z" fill="url(#paint0_linear_138_1695)" fill-opacity="0.96"/>
+                                    </mask>
+                                    <g mask="url(#mask0_138_1695)">
+                                        <path d="M4.36589 3.09039C13.32 1.83677 42.7405 1.06114 74.1215 1.00346C105.48 0.945826 138.641 1.60493 155.04 3.19811C157.538 3.44085 159.273 5.11625 159.436 7.52873C160.159 18.2361 160.203 44.4659 159.474 68.2999C159.11 80.2121 158.553 91.5011 157.794 99.9331C157.414 104.153 156.986 107.632 156.511 110.107C156.273 111.349 156.03 112.302 155.789 112.958C155.668 113.287 155.56 113.507 155.474 113.642C155.45 113.679 155.431 113.704 155.418 113.72C154.989 113.89 154.095 114.094 152.682 114.305C151.233 114.52 149.342 114.729 147.064 114.929C142.51 115.327 136.455 115.685 129.401 115.986C115.295 116.588 97.2283 116.964 79.2501 116.998C61.2699 117.031 43.3939 116.723 29.6658 115.959C22.7984 115.577 16.9908 115.081 12.7341 114.462C10.6029 114.152 8.889 113.815 7.63612 113.454C7.00917 113.273 6.52249 113.094 6.16671 112.921C5.79369 112.74 5.64555 112.605 5.60516 112.554C5.32205 112.196 5.00026 111.542 4.67354 110.529C4.35319 109.536 4.05188 108.276 3.77162 106.772C3.21129 103.763 2.74886 99.8527 2.37356 95.3004C1.62331 86.2001 1.22782 74.6192 1.07548 62.7377C0.770678 38.9659 1.44001 14.0893 2.16863 5.60875C2.23286 4.86115 2.47692 4.28106 2.82982 3.87451C3.17586 3.47586 3.67467 3.18716 4.36589 3.09039Z" fill="url(#paint1_radial_138_1695)" fill-opacity="0.96" stroke="#9062C3" stroke-width="2"/>
+                                    </g>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_138_1695" x1="80.4447" y1="118" x2="80.4447" y2="-2.23288e-09" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_138_1695" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.4447 161.949) rotate(-90) scale(161.949 402.259)">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>  
+                                img(src="./assets/img/control/launching-artefacts-2.svg", alt="")
+                                img.control__launching-content-table-item-img-active(src="./assets/img/control/launching-artefacts-2-active.png", srcset="./assets/img/control/launching-artefacts-2-active@2x.png" alt="")
+                                span Кристалл <br> знаний
+                                button.btn.--texture Применить
+                            li.control__launching-content-table-item.control__launching-content-table-item--6
+                                <svg class="control__launching-content-table-item-bg" width="161" height="118" viewBox="0 0 161 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_138_1695" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="161" height="118">
+                                        <path d="M1.1723 5.52315C1.33002 3.6874 2.40252 2.35552 4.22723 2.10005C22.3028 -0.430629 122.228 -0.994415 155.136 2.2028C158.075 2.48831 160.235 4.51552 160.434 7.46138C161.886 28.9796 160.604 112.545 155.883 114.61C147.267 118.379 10.5037 120.353 4.82108 113.174C-1.50283 105.185 -0.293465 22.5835 1.1723 5.52315Z" fill="url(#paint0_linear_138_1695)" fill-opacity="0.96"/>
+                                    </mask>
+                                    <g mask="url(#mask0_138_1695)">
+                                        <path d="M4.36589 3.09039C13.32 1.83677 42.7405 1.06114 74.1215 1.00346C105.48 0.945826 138.641 1.60493 155.04 3.19811C157.538 3.44085 159.273 5.11625 159.436 7.52873C160.159 18.2361 160.203 44.4659 159.474 68.2999C159.11 80.2121 158.553 91.5011 157.794 99.9331C157.414 104.153 156.986 107.632 156.511 110.107C156.273 111.349 156.03 112.302 155.789 112.958C155.668 113.287 155.56 113.507 155.474 113.642C155.45 113.679 155.431 113.704 155.418 113.72C154.989 113.89 154.095 114.094 152.682 114.305C151.233 114.52 149.342 114.729 147.064 114.929C142.51 115.327 136.455 115.685 129.401 115.986C115.295 116.588 97.2283 116.964 79.2501 116.998C61.2699 117.031 43.3939 116.723 29.6658 115.959C22.7984 115.577 16.9908 115.081 12.7341 114.462C10.6029 114.152 8.889 113.815 7.63612 113.454C7.00917 113.273 6.52249 113.094 6.16671 112.921C5.79369 112.74 5.64555 112.605 5.60516 112.554C5.32205 112.196 5.00026 111.542 4.67354 110.529C4.35319 109.536 4.05188 108.276 3.77162 106.772C3.21129 103.763 2.74886 99.8527 2.37356 95.3004C1.62331 86.2001 1.22782 74.6192 1.07548 62.7377C0.770678 38.9659 1.44001 14.0893 2.16863 5.60875C2.23286 4.86115 2.47692 4.28106 2.82982 3.87451C3.17586 3.47586 3.67467 3.18716 4.36589 3.09039Z" fill="url(#paint1_radial_138_1695)" fill-opacity="0.96" stroke="#9062C3" stroke-width="2"/>
+                                    </g>
+                                    <defs>
+                                        <linearGradient id="paint0_linear_138_1695" x1="80.4447" y1="118" x2="80.4447" y2="-2.23288e-09" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </linearGradient>
+                                        <radialGradient id="paint1_radial_138_1695" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(80.4447 161.949) rotate(-90) scale(161.949 402.259)">
+                                            <stop stop-color="#9062C3" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9062C3"/>
+                                        </radialGradient>
+                                    </defs>
+                                </svg>  
+                                img(src="./assets/img/control/launching-artefacts-6.svg", alt="")
+                                img.control__launching-content-table-item-img-active(src="./assets/img/control/launching-artefacts-4-active.png", srcset="./assets/img/control/launching-artefacts-4-active@2x.png" alt="")
+                                span Нейросеть <br> Ева
+                                button.btn.--texture Применить
+                .control__raiting#controlRaiting
+                    h2 Рейтинг участников
+                    .control__raiting-planets 
+                        button.active Общий рейтинг
+                        button Корпорулия
+                        button Футурия
+                        button Физиляндия
+                        button Юриляндия
+                        button Военная
+                        button Порталия
+                        .control__raiting-planets-inputs 
+                            <svg class="search-btn" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 8.125C12 10.6103 10.0663 13 8.17391 13C5.86872 13 4 10.9853 4 8.5C4 6.01472 5.04348 4 8.17391 4C10.4791 4 12 5.63972 12 8.125Z" stroke="white" fill="transparent"/>
+                                <path d="M11 11L13 13" stroke="white" stroke-linecap="round"/>
+                            </svg>
+                            input(type="text")#searchInput
+                            button.close-btn(disabled)
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L13 13" stroke="white" stroke-linecap="round"/>
+                                    <path d="M13 1L1 13" stroke="white" stroke-linecap="round"/>
+                                </svg>
+                    .control__raiting-table
+                        <svg width="1346" height="489" class="control__raiting-table-bg control__raiting-table-bg--regular" viewBox="0 0 1346 489" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_i_460_1312)">
+                                <path d="M7.64225e-08 36.0637C6.30548e-07 24.5201 7.61266 14.8418 19.1022 13.7256C195.441 -3.40718 1185.05 -7.25512 1318.76 18.2699C1326.28 19.7059 1331.3 25.6076 1332.65 33.1454C1348.3 120.348 1346.04 340.277 1345.68 454.589C1345.65 467.065 1336.44 477.434 1324 478.338C980.191 503.321 173.932 478.949 18.8027 460.776C7.49528 459.451 0.000353657 449.861 0.00033889 438.476C0.000204747 335.058 -4.58158e-06 133.1 7.64225e-08 36.0637Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_i_460_1312" x="0" y="-4" width="1346" height="493" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="-4"/>
+                                    <feGaussianBlur stdDeviation="4"/>
+                                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.909804 0 0 0 0 0.313726 0 0 0 0 0.470588 0 0 0 0.48 0"/>
+                                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow_460_1312"/>
+                                </filter>
+                            </defs>
+                        </svg>
+                        <svg width="1344" height="843" class="control__raiting-table-bg control__raiting-table-bg--large control__raiting-table-bg--hidden" viewBox="0 0 1344 843" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <g filter="url(#filter0_i_530_590)">
+                                <path d="M4.28089e-07 36.8005C1.41199e-06 25.389 7.4475 16.0404 18.7958 14.842C194.191 -3.68141 1184.16 -7.84822 1316.98 19.7561C1324.39 21.2942 1329.21 27.1746 1330.28 34.6578C1346.53 148.404 1343.99 657.381 1343.67 808.047C1343.65 820.462 1334.53 830.511 1322.16 831.484C978.695 858.48 172.57 832.118 18.4517 812.499C7.30048 811.08 0.000354562 801.852 0.000343491 790.611C0.000207859 652.895 -1.09698e-05 168.995 4.28089e-07 36.8005Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <filter id="filter0_i_530_590" x="0" y="-4" width="1344" height="847" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                    <feOffset dy="-4"/>
+                                    <feGaussianBlur stdDeviation="4"/>
+                                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0.909804 0 0 0 0 0.313726 0 0 0 0 0.470588 0 0 0 0.48 0"/>
+                                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow_530_590"/>
+                                </filter>
+                            </defs>
+                        </svg>
+
+                        header 
+                            span Место
+                            span Участник Одиссеи
+                            span Подразделение
+                            span Должность
+                            span Баллы
+                        ul 
+                            li.active
+                                .control__raiting-table-position #1
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-1.png", alt="avatar")
+                                    span <b>Тимофеев </b>Игорь
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Департамент продаж и глав. закупок и ещё раз закупок
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Менеджер проектов различных, в основном ответсвенных
+                                .control__raiting-table-score 969
+                            li 
+                                .control__raiting-table-position #2
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-2.png", alt="avatar")
+                                    span <b>Константин </b>Константинов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Оператор по работе с клиентами
+                                .control__raiting-table-score 781
+                            li 
+                                .control__raiting-table-position #3
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел производьства
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Почти главный инжинер, немного не хватило
+                                .control__raiting-table-score 324
+                            li 
+                                .control__raiting-table-position #4
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел добычи
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Шахтёр первого уровня на планете Фурляндия
+                                .control__raiting-table-score 42134
+                            li 
+                                .control__raiting-table-position #5
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел по меж космическим направлениям
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 1241
+                            li 
+                                .control__raiting-table-position #6
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 432523
+                            li
+                                .control__raiting-table-position #7
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-1.png", alt="avatar")
+                                    span <b>Тимофеев </b>Игорь
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Департамент продаж
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Менеджер проектов
+                                .control__raiting-table-score 4324
+                            li 
+                                .control__raiting-table-position #8
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-2.png", alt="avatar")
+                                    span <b>Константин </b>Константинов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Оператор по работе с клиентами
+                                .control__raiting-table-score 781
+                            li 
+                                .control__raiting-table-position #9
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                            li 
+                                .control__raiting-table-position #10
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                            li 
+                                .control__raiting-table-position #11
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                            li 
+                                .control__raiting-table-position #12
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                            li
+                                .control__raiting-table-position #13
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-1.png", alt="avatar")
+                                    span <b>Тимофеев </b>Игорь
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Департамент продаж
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Менеджер проектов
+                                .control__raiting-table-score 969
+                            li 
+                                .control__raiting-table-position #14
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-2.png", alt="avatar")
+                                    span <b>Константин </b>Константинов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Оператор по работе с клиентами
+                                .control__raiting-table-score 781
+                            li 
+                                .control__raiting-table-position #15
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                            li 
+                                .control__raiting-table-position #16
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                            li 
+                                .control__raiting-table-position #17
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                        ul.main-user
+                            li.bottom-active
+                                .control__raiting-table-position #18
+                                .control__raiting-table-profile 
+                                    img(src="./assets/img/control/raiting-avatar-3.png", alt="avatar")
+                                    span <b>Гарик </b>Серов
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-subdivision 
+                                    span Отдел маркетинга
+                                    .raiting-table-hint
+                                        p
+                                .control__raiting-table-post  
+                                    .raiting-table-hint
+                                        p
+                                    span Инженер
+                                .control__raiting-table-score 614
+                        footer 
+                            .control__raiting-table-history-star 
+                                img(src="./assets/img/control/star.svg", alt="star")
+                                p – участники, которые получат гарантированные призы
+                            .control__raiting-table-history-position 
+                                span
+                                p – ваша позиция в рейтинге

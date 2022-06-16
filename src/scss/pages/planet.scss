@@ -1,0 +1,787 @@
+.planets {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    min-width: 1200px;
+    min-height: 610px;
+    overflow: hidden;
+
+    &__container {
+        height: 100%;
+        position: relative;
+    }
+
+    &::-webkit-scrollbar {
+        display: block;
+        width: 10px;
+    }
+    
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        border-radius: 10px;
+    }
+    
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #8F62C3;
+        border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #8F62C3;
+    }
+
+    .header__title {
+        &::after { display: none }
+    }
+
+    &__img {
+        position: absolute;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -50%;
+
+        transition: .4s;
+        width: 769px;
+        height: 888px;
+
+        @media (max-height: 840px), (max-width: 1480px) {
+            width: 645px;
+            height: auto;
+            bottom: -55%;
+        }
+
+        &-link {
+            width: 502px;
+            height: 345px;
+
+            position: absolute;
+            display: block;
+
+            right: 50%;
+            transform: translateX(50%);
+            bottom: 0;
+
+            z-index: 15;
+            
+            @media (max-height: 840px), (max-width: 1480px) {
+                width: 419px;
+                height: 270px;
+            }
+        }
+    }
+
+    &__table {
+        position: relative;
+        padding-top: 70px;
+        height: 100%;
+
+        overflow: hidden;
+
+        &-item {
+            position: absolute;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+            z-index: 25;
+
+            width: 259px;
+            height: 259px;
+
+            &-planet { filter: saturate(0.3) brightness(80%) }
+
+            &-rocket {
+                display: flex;
+                opacity: 0;
+                transition: .4s;
+
+                position: absolute;
+                animation: rocketRotation 7s infinite forwards linear;
+                              
+                @media (max-height: 840px), (max-width: 1480px) {
+                    width: 200px;
+                    height: auto;
+                }
+            }
+
+            &--hover {
+                transition: .4s;
+
+                .planets__table-item-planet { transition: .4s }
+                .planets__table-item-title { transition: .4s }
+                .planets__table-item-rocket { transition: 1s }
+            }
+
+            &-progress {
+                background-color: white;
+                border-radius: 100px;
+                background-image: url(./../img/control/texture-dirt.png);
+                background-position: center;
+                background-size: auto auto;
+
+                padding: 3px 8px 5px;
+                display: block;
+                width: fit-content;
+
+                position: absolute;
+                bottom: 7%;
+
+                &--blocked {
+                    background-color: transparent;
+                    border: 1px solid #9062C3;
+                    color: #DBBCFF;
+
+                    transition: .4s;
+                }
+
+                &--completed {
+                    display: none;
+                    color: white;
+                    background-color: #38A643;
+                    box-shadow: 0px 8px 24px rgba(56, 166, 67, 0.48), inset 0px 2px 4px rgba(255, 255, 255, 0.25), inset 0px -8px 8px rgba(22, 90, 29, 0.5);
+                }
+                
+                @media (max-height: 840px), (max-width: 1480px) {
+                    font-size: 10px;
+                    padding: 2px 17px;
+                    line-height: 140%;
+                }
+            }
+
+            &-title {
+                position: absolute;
+                top: 10%;
+                left: -2%;
+                width: 400px;
+                transform: rotate(-50deg);
+
+                color: #919191;
+
+                span {
+                    height: 100%;
+                    min-height: 150px;
+                    position: absolute;
+                    width: 24px;
+                    left: 0;
+                    top: 0;
+                    
+                    font-size: 16px;
+                    transform-origin: bottom center;
+                }
+            }
+            
+            &.active {
+                width: 343px;
+                cursor: pointer;
+
+                .planets__table-item-planet {
+                    filter: drop-shadow(0px 4px 34px #E85078) drop-shadow(0px 4px 34px #E85078);
+                    width: 182px;
+                    max-width: 182px;
+
+                    transition: .4s;
+                    
+                    @media (max-height: 840px), (max-width: 1480px) { width: 144px }
+                }
+                
+                .planets__table-item-title { color: white }
+                .planets__table-item-rocket { 
+                    display: flex;
+                    min-width: 400px;
+                    height: 400px;
+
+                    opacity: 1;
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        min-width: 350px;
+                        height: 350px;
+                    }
+                }
+
+                @media (max-height: 840px), (max-width: 1480px) { width: 252px }
+
+                &:hover {
+                    .planets__table-item-planet {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+            
+            &--completed {
+                .planets__table-item-planet { filter: drop-shadow(3px -42px 21px #2E0D6F); transition: .4s; }
+                .planets__table-item-title { color: white }
+                .planets__table-item-progress { display: none }
+                .planets__table-item-progress--blocked { display: none }
+                .planets__table-item-progress--completed { display: flex }
+
+                cursor: pointer;
+
+                &:hover {
+                    .planets__table-item-planet {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+            
+            &--passed {
+                .planets__table-item-planet { filter: drop-shadow(0px 4px 64px #E85078) drop-shadow(0px 4px 64px #E85078); transition: .4s; }
+                .planets__table-item-title { color: white }
+                .planets__table-item-progress { display: none }
+                .planets__table-item-progress--blocked { display: none }
+                .planets__table-item-progress--completed { display: flex }
+
+                cursor: pointer;
+
+                &:hover {
+                    .planets__table-item-planet {
+                        transform: scale(1.05);
+                        filter: drop-shadow(0px 4px 64px #E85078) drop-shadow(0px 4px 64px #E85078);
+                    }
+                }
+            }
+
+            &--1 {
+                bottom: 8%;
+                left: 5%;
+
+                .planets__table-item-planet {
+                    width: 138px;
+                    height: 138px;
+                    
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        width: 112px;
+                        height: 112px;
+                    }
+                }
+
+                .planets__table-item-title {
+                    position: absolute;
+                    top: 15%;
+                    left: 3%;
+                    width: 110px;
+                    transform: rotate(-58deg);
+                    z-index: 15;
+    
+                    span {
+                        min-height: 120px;
+                        width: 24px;
+                    }
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        position: absolute;
+                        top: 17%;
+                        left: -2%;
+                        transform: rotate(-62deg);
+                    }
+                }
+
+                &.active {
+                    .planets__table-item-planet {
+                        width: 186px;
+                        height: 186px;
+
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            width: 144px;
+                            height: 144px;
+                        }
+                    }
+
+                    .planets__table-item-title {
+                        position: absolute;
+                        top: 18%;
+                        left: 3%;
+                        width: 110px;
+                        transform: rotate(-74deg);
+        
+                        span {
+                            min-height: 120px;
+                            width: 24px;
+                        }
+    
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            position: absolute;
+                            top: 20%;
+                            left: 0%;
+                            transform: rotate(-62deg);
+                        }
+                    }
+
+                    span {
+                        bottom: 0%;
+                        @media (max-height: 840px), (max-width: 1480px) { bottom: 10% }
+                    }
+                }
+
+                span {
+                    @media (max-height: 840px), (max-width: 1480px) { bottom: 15% }
+                }
+            }
+
+            &--2 {
+                left: 16.81%;
+                bottom: 44.5%;
+
+                .planets__table-item-planet {
+                    width: 153px;
+                    height: 153px;
+                    
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        width: 128px;
+                        height: 128px;
+                    }
+                }
+
+                span {
+                    bottom: 5%;
+                    @media (max-height: 840px), (max-width: 1480px) { bottom: 15% }
+                }
+
+                .planets__table-item-title  {
+                    position: absolute;
+                    top: 15%;
+                    left: initial;
+                    right: 8%;
+                    width: 100px;
+                    transform: rotate(16deg);
+    
+                    span {
+                        min-height: 120px;
+                        width: 24px;
+                    }
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        top: 18%;
+                        right: 10%;
+                    }
+                }
+
+                &.active {
+                    left: 13.25%;
+                    bottom: 36%;
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        left: 16.25%;
+                        bottom: 36%;
+                    }
+
+                    .planets__table-item-planet {
+                        width: 200px;
+                        height: 200px;
+
+                        max-width: none;
+                        
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            width: 128px;
+                            height: 128px;
+                        }
+                    }
+
+                    span {
+                        bottom: -5%;
+                        @media (max-height: 840px), (max-width: 1480px) { bottom: 14% }
+                    }
+
+                    .planets__table-item-title {
+                        top: 10%;
+                        right: 15%;
+                        width: 100px;
+                        transform: rotate(16deg);
+        
+                        span {
+                            min-height: 120px;
+                            width: 24px;
+                        }
+    
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            top: 18%;
+                            right: 10%;
+                        }
+                    }
+                }
+            }
+
+            &--3 {
+                bottom: initial;
+                left: 32.29%;
+                top: 8.62%;
+
+                .planets__table-item-planet {
+                    width: 134px;
+                    height: 134px;
+                                        
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        width: 112px;
+                        height: 112px;
+                    }
+                }
+
+                @media (max-height: 840px), (max-width: 1480px) { top: 0% }
+
+                span {
+                    bottom: 5%;
+                    @media (max-height: 840px), (max-width: 1480px) { bottom: 15% }
+                }
+
+                .planets__table-item-title  {
+                    position: absolute;
+                    top: 17%;
+                    left: initial;
+                    right: 50%;
+
+                    width: 100px;
+                    transform: rotate(-40deg);
+    
+                    span {
+                        min-height: 120px;
+                        width: 30px;
+                    }
+                }
+                
+                &.active {
+                    left: 28%;
+                    top: 8%;
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        left: 32%;
+                        top: 2%;
+                    }
+
+                    .planets__table-item-planet {
+                        width: 186px;
+                        height: 186px;
+
+                        max-width: none;
+                        
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            width: 144px;
+                            height: 144px;
+                        }
+                    }
+
+                    span {
+                        bottom: -5%;
+                        @media (max-height: 840px), (max-width: 1480px) { bottom: 11% }
+                    }
+
+                    .planets__table-item-title {
+                        top: 4%;
+                        right: 48%;
+                        width: 100px;
+                        transform: rotate(-39deg);
+        
+                        span {
+                            min-height: 120px;
+                            width: 24px;
+                        }
+    
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            top: 10%;
+                            right: 22%;
+
+                            width: 70px;
+                            transform: rotate(13deg);
+                        }
+                    }
+                }
+            }
+
+            &--4 {
+                left: 48.47%;
+                top: 7.88%;
+
+                .planets__table-item-planet {
+                    width: 176px;
+                    height: 176px;
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        width: 130px;
+                        height: 130px;
+                    }
+                }
+
+                @media (max-height: 840px), (max-width: 1480px) {
+                    top: -0.9%;
+                    left: 46%;
+                }
+
+                span {
+                    bottom: 2%;
+                    @media (max-height: 840px), (max-width: 1480px) { bottom: 13% }
+                }
+
+                .planets__table-item-title  {
+                    position: absolute;
+                    top: 10%;
+                    left: initial;
+                    right: 50%;
+
+                    width: 10px;
+                    transform: rotate(5deg);
+    
+                    span {
+                        min-height: 120px;
+                        width: 30px;
+                    }
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        top: 12%;
+                        right: 50%;
+                        transform: rotate(10deg);
+                    }
+                }
+
+                &.active {
+                    left: 45.47%;
+                    top: 7.88%;
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        left: 48%;
+                        top: 1.88%;
+                    }
+
+                    .planets__table-item-planet {
+                        width: 186px;
+                        height: 186px;
+
+                        max-width: none;
+                        
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            width: 144px;
+                            height: 144px;
+                        }
+                    }
+
+                    span {
+                        bottom: -5%;
+                        @media (max-height: 840px), (max-width: 1480px) { bottom: 14% }
+                    }
+
+                    .planets__table-item-title {
+                        top: 4%;
+                        right: 48%;
+                        width: 100px;
+                        transform: rotate(-39deg);
+        
+                        span {
+                            min-height: 120px;
+                            width: 24px;
+                        }
+    
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            top: 10%;
+                            right: 22%;
+
+                            width: 70px;
+                            transform: rotate(13deg);
+                        }
+                    }
+
+                    .planets__table-item-rocket { width: 300px }
+                }
+            }
+
+            &--5 {
+                top: initial;
+                left: initial;
+
+                right: 16.9%;
+                bottom: 48.5%;
+                
+                .planets__table-item-planet {
+                    width: 145px;
+                    height: 145px;
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        width: 121px;
+                        height: 121px;
+                    }
+                }
+
+                span {
+                    bottom: 6%;
+                    @media (max-height: 840px), (max-width: 1480px) { bottom: 15% }
+                }
+
+                .planets__table-item-title {
+                    position: absolute;
+                    top: 10%;
+                    left: initial;
+                    right: 50%;
+
+                    width: 10px;
+                    transform: rotate(7deg);
+    
+                    span {
+                        min-height: 120px;
+                        width: 15px;
+                    }
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        position: absolute;
+                        top: 15%;
+                        left: initial;
+                        right: 50%;
+    
+                        width: 10px;
+                        transform: rotate(-5deg);
+
+                        span {
+                            min-height: 90px;
+                            width: 15px;
+                        }
+                    }
+                }
+
+                &.active {
+                    right: 11.9%;
+                    bottom: 48.5%;
+
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        right: 14.9%;
+                        bottom: 48.5%;
+                    }
+
+                    .planets__table-item-planet {
+                        width: 215px;
+                        height: 215px;
+
+                        max-width: none;
+                        
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            width: 174px;
+                            height: 174px;
+                        }
+                    }
+
+                    span {
+                        bottom: -5%;
+                        @media (max-height: 840px), (max-width: 1480px) { bottom: 10% }
+                    }
+
+                    .planets__table-item-title {
+                        top: -3%;
+                        right: 28%;
+                        width: 100px;
+                        transform: rotate(-13deg);
+        
+                        span {
+                            min-height: 120px;
+                            width: 24px;
+                        }
+    
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            top: 4%;
+                            right: 22%;
+
+                            width: 70px;
+                            transform: rotate(8deg);
+                        }
+                    }
+                }   
+            }
+
+            &--6 {
+                top: initial;
+                left: initial;
+
+                bottom: 15.8%;
+                right: 6.11%;
+
+                .planets__table-item-planet {
+                    width: 155px;
+                    height: 155px;
+                    
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        width: 130px;
+                        height: 130px;
+                    }
+                }
+                
+                span {
+                    bottom: 4%;
+                    @media (max-height: 840px), (max-width: 1480px) { bottom: 12% }
+                }
+
+                &.active {
+                    bottom: 10.8%;
+
+                    .planets__table-item-title  {
+                        position: absolute;
+                        top: 18%;
+                        left: 5%;
+                        width: 110px;
+                        transform: rotate(-74deg);
+        
+                        span {
+                            min-height: 120px;
+                            width: 24px;
+                        }
+    
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            position: absolute;
+                            top: 17%;
+                            left: -2%;
+                            transform: rotate(-62deg);
+                        }
+                    }
+                    
+                    .planets__table-item-planet {
+                        width: 185px;
+                        height: 185px;
+                        
+                        @media (max-height: 840px), (max-width: 1480px) {
+                            width: 159px;
+                            height: 159px;
+                        }
+                    }
+
+                    span {
+                        bottom: -5%;  
+                        @media (max-height: 840px), (max-width: 1480px) { bottom: 5% }
+                    }
+                }
+
+                .planets__table-item-title {
+                    position: absolute;
+                    top: 20%;
+                    left: initial;
+                    right: 63%;
+
+                    width: 100px;
+                    transform: rotate(-70deg);
+    
+                    span {
+                        min-height: 100px;
+                        width: 20px;
+                    }
+                        
+                    @media (max-height: 840px), (max-width: 1480px) {
+                        top: 20%;
+                        right: 60%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes rocketRotation {
+    0% { transform: rotate(0deg) }
+    50% { transform:  rotate(180deg) translateX(-10px);}
+    100% { transform: rotate(360deg) }
+}
+
+.planets__img-link {
+    &:hover + .planets__img { filter: saturate(1.4) }
+}

@@ -1,0 +1,34 @@
+// Commons
+@import "variables";
+@import "custom-reset";
+// External
+@import "node_modules/swiper/swiper.scss";
+@import "node_modules/swiper/components/pagination/pagination.scss";
+@import "plugins/smoothscroll.scss";
+@import "plugins/airdatepicker.scss";
+// Base
+@import "mixins";
+@import "base";
+@import "generated/svgsprites";
+@import "fonts";
+// Base components
+@import "components/base/flex";
+// @import "components/base/grid";
+@import "components/base/btn";
+@import "components/base/modal";
+@import "components/base/hints";
+@import "components/base/footer";
+@import "components/base/header";
+// Project components
+@import "components/project/preloader";
+@import "components/project/simple-bar";
+// Project pages
+@import "pages/main";
+@import "pages/about";
+@import "pages/profile";
+@import "pages/planet";
+@import "pages/control";
+@import "pages/faq";
+@import "pages/end";
+// margins
+@import "components/base/margins";
