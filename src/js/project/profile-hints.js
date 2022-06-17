@@ -178,7 +178,7 @@ const profileHints = () => {
 
             let swiperPrizes = new Swiper('.profile__prizes-slider', {
                 slidesPerView: 'auto',
-                spaceBetween: 19,
+                spaceBetween: 12,
                 freeMode: true,
 
                 navigation: {

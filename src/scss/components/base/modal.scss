@@ -212,6 +212,7 @@
                 ul {
                     button { 
                         border: 2px solid #d1beef;
+                        box-shadow: inset 0px -8px 10px #9F9F9F;
                         &::after { display: none }
                         &:hover { border-color: #9062C3 }
                     }

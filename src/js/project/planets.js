@@ -24,7 +24,7 @@ const planets = () => {
         
         document.querySelectorAll('.planets__table-item-title').forEach(function(item) {
             item.querySelectorAll('span').forEach(function(char, index) {
-                char.style.transform = `rotate(${index * 8}deg)`
+                char.style.transform = `rotate(${index * 10}deg)`
             })
         })
     }

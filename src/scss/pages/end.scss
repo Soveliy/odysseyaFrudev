@@ -7,7 +7,9 @@
     &__img {
         max-width: 1150px;
         z-index: 10;
-
+        &:not(.end__img--astrounat){
+            opacity:0
+        }
         @media (max-height: 840px), (max-width: 1480px) {
             max-width: 930px;
         }
@@ -15,8 +17,8 @@
         &--astrounat {
             max-width: 450px;
             position: absolute;
-            right: 5%;
-            bottom: -45%;
+            right: 1%;
+            bottom: -30%;
 
             @media (max-height: 840px), (max-width: 1480px) {
                 max-width: 400px;

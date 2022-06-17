@@ -231,7 +231,13 @@
         visibility: hidden;
         transition: 1s ease;
 
-        &:nth-child(4) { height: 620px }
+        &:nth-child(4) { height: 620px;
+            display: flex;
+        justify-content: center; 
+            > div{
+                margin: 0;
+            }
+         }
 
         &.show {
             opacity: 1;

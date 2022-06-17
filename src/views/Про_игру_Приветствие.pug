@@ -10,27 +10,26 @@ block content
       +header('Про игру')
       section.about
         .about__astronaut(fade-in-preloader)
-          img(src="./assets/img/about/astronaut.png", alt="")
+          img(src="./assets/img/about/astronaut_new.png", alt="")
         .about__messages(fade-in-preloader)
           .about__message.message-1.is-active
             .message(style="background-image: url(./assets/img/message/message-1.svg)") 
-              p.message__text Привет! Поздравляю, ты в составе команды Космической Одиссеи ПСБ. Будем бороздить космические просторы вместе!
+              p.message__text Привет! Поздравляю, ты – в составе команды Космической Одиссеи ПСБ. Как ты наверно знаешь, меня зовут Ньютон. И в этом путешествии я буду твоим проводником.
             .message__next(data-message="message-2")
-              .btn.--link Круто! А зачем?
+              .btn.--link Круто! А какая у нас цель?
           .about__message.message-2
             .message(style="background-image: url(./assets/img/message/message-2.svg)") 
-              p.message__text Центр управления ПСБ запускает межгалактическую ракету, чтобы осваивать новые галактики и внедрять там банковскую систему. Для запуска ракеты тебе нужно собрать артефакты, которые хранятся в разных уголках космоса.
+              p.message__text Центральное управление Галактикой ПСБ разработало Двигатель нового поколения, который обеспечит ее бесконечным зарядом энергии на многие годы вперед. Для его запуска тебе нужно собрать артефакты, которые хранятся на планетах нашей системы.
             .message__next(data-message="message-3")
               .btn.--link И как же я их соберу?
           .about__message.message-3
             .message(style="background-image: url(./assets/img/message/message-3.svg)") 
-              p.message__text Ты должен посетить 6 планет и выполнить 2 задания на каждой из них. В награду ты получишь артефакты.
+              p.message__text Ты должен посетить 5 планет Галактики ПСБ и выполнить 2 задания на каждой из них.     В награду ты получишь артефакты.
                 .message__icons 
                   img(src="./assets/img/message/i1.png", srcset="./assets/img/message/i1@2x.png 2x", alt="")
                   img(src="./assets/img/message/i2.png", srcset="./assets/img/message/i2@2x.png 2x", alt="")
                   img(src="./assets/img/message/i3.png", srcset="./assets/img/message/i3@2x.png 2x", alt="")
                   img(src="./assets/img/message/i4.png", srcset="./assets/img/message/i4@2x.png 2x", alt="")
-                  img(src="./assets/img/message/i5.png", srcset="./assets/img/message/i5@2x.png 2x", alt="")
                   img(src="./assets/img/message/i6.png", srcset="./assets/img/message/i6@2x.png 2x", alt="")
             .message__next(data-message="message-4")
               .btn.--link Звучит захватывающе!
@@ -42,17 +41,15 @@ block content
           .about__message.message-5
             .message(style="background-image: url(./assets/img/message/message-5.svg)") 
               p.message__text 
-                span За каждую игру тебе начисляются баллы. Чем больше баллов наберешь, тем больше шансов получить призы.
-                span 
-                  | Узнать подробнее о призах можно 
+                span За каждое задание тебе будут начисляться баллы. Чем больше баллов наберешь,    тем больше у тебя шансов их получить.
+                span Узнать подробнее о призах можно
                   a.btn.--link(href="#") здесь.
-                span Количество баллов ты можешь отслеживать в Профиле игрока, а свое место в рейтинге — в Центре управления.
+                span Количество набранных баллов ты можешь отслеживать в Профиле, а свое место             в рейтинге – в Центральном управлении Галактикой.
             .message__next.message__next--autoheight(data-message="message-6" button-fadein="bottom-btn")
               .btns-block 
-                .btn.--link Что ж ты молчал? <br>
                 .btn.--link Не терпится начать!
           .about__message.message-6
             .message(style="background-image: url(./assets/img/message/message-6.svg)") 
-              p.message__text Ты почти готов к приключению. Но прежде чем отправиться на первую планету за артефактом, заполни свой Профиль и загляни в Центр управления.
+              p.message__text Прежде чем отправиться на первую планету за артефактом, заполни свой Профиль и загляни в Центральное управление Галактикой.
     .bottom-btn.hidden
       +link-big('Перейти к Профилю', './Профиль_Знакомство_Блок_с_именем_и_аватаром.html')

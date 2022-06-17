@@ -179,12 +179,12 @@
             color: white;
             font-size: 10px;
 
-            width: 26px;
-            height: 26px;
+            width: 30px;
+            height: 30px;
 
             position: absolute;
-            top: 0;
-            right: 24px;
+            top: 4px;
+            right: 30px;
 
             display: flex;
             align-items: center;
@@ -192,6 +192,8 @@
             justify-content: center;
     
             svg {
+                height: 100%;
+                width: 100%;
                 border-radius: 100%;
                 box-shadow: 0px 5px 44px #FFCC55;
                 border: 1px solid rgba(255, 204, 85, 0.48);
@@ -326,7 +328,7 @@
         
         &--1 {
             .hints__message-cloud {
-                width: 350px;
+                width: 380px;
                 height: 270px;
 
                 p { padding-bottom: 20px }
@@ -334,11 +336,16 @@
         }
 
         &--2 {
+            padding-top: 22px;
             .hints__message-cloud {
-                width: 350px;
+                width: 420px;
                 height: 270px;
 
                 p { padding-bottom: 20px }
+            }
+            .message__next {
+                margin-bottom: 22px;
+                margin-left: 47px;
             }
         }
 
@@ -455,7 +462,7 @@
 
         &--planets {
             right: 5%;
-            top: -12%;
+            top: -10%;
 
             &.hints__message--1 {
                 .hints__message-cloud {
@@ -465,6 +472,7 @@
                     p {
                         font-size: 12px;
                         padding-bottom: 0;
+                        top: -10px;
                         @media (max-height: 840px), (max-width: 1480px) { font-size: 10px }
                     }
 
@@ -473,7 +481,8 @@
                     }
                 }
                 .message__next { 
-                    bottom: 7%;
+                    bottom: 16%;
+                    margin-left: 20px;
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: center;
@@ -505,15 +514,16 @@
         }
 
         &--small {
-            top: -8%;
+            top: 7%;
 
             .hints__message-cloud {
                 filter: drop-shadow(0px 22px 40px #E85078);
             }
 
             .message__next {
+                left: 46px;
                 height: 36px !important;
-                bottom: 18% !important;
+                bottom: 27% !important;
                             
                 @media (max-height: 840px), (max-width: 1480px) {
                     bottom: 22% !important;

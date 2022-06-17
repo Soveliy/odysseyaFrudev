@@ -10,11 +10,17 @@
     overflow-y: hidden;
 
     & > * { user-select: none }
+
+
+    .message__next{
+        padding-left: 14px;
+        padding-right: 14px;
+    }
 }
 
 .about__astronaut {
     position: absolute;
-    left: 50%;
+    left: 48%;
     bottom: 0;
     transform: translateX(-50%);
     z-index: 110;
@@ -28,8 +34,9 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 567px;
-    margin-left: -247px;
+    bottom: 591px;
+    margin-left: -268px;
+
 
     z-index: 100;
 
@@ -120,32 +127,33 @@
 }
 
 .message-1 .message {
-    width: 446px;
-    height: 261px;
+    width: 498px;
+    height: 276px;
 }
 
 .message-1 .message__text {
     max-width: 326px;
-    transform: translate(80px, 74px);
+    transform: translate(103px, 69px);
 }
 
 .message-1 .message__next {
-    transform: translateX(-250px) translateY(-30px);
+    transform: translateX(-248px) translateY(-46px);
 }
-
+.message-2{
+    margin-top: -23px;
+}
 .message-2 .message {
-    width: 440px;
-    height: 343px;
+    width: 528px;
+    height: 374px;
     transform: translateX(-250px) translateY(-66px);
 }
 
 .message-2 .message__text {
     max-width: 278px;
-    transform: translate(77px, 78px);
+    transform: translate(134px, 81px);
 }
-
 .message-2 .message__next {
-    transform: translateX(-290px) translateY(-94px);
+    transform: translateX(-211px) translateY(-106px);
 }
 
 .message-3 .message {
